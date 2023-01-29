@@ -6,18 +6,55 @@
   </head>
   <body>
     <script>
-      // Function getComputerChoice() that generates and returns the choice of the computer ("rock", "paper", "scissors")
+      /***********************************************
+       * Function getComputerChoice() that generates
+       * and returns the choice of the computer
+       * ("rock", "paper", "scissors")
+       */
+      function getComputerChoice(){
+        // Generate random number from 1 to 3
+        let randomNum = Math.floor(Math.random()*3) + 1;
 
-      // Function playRound() plays 1 round with 2 parameters (choices of the player and computer) and returns the result of current round
+        // randomNum corresponds to Rock, Paper, or Scissors
+        switch(randomNum){
+          case 1: return "Rock";
+          case 2: return "Paper";
+          case 3: return "Scissors";
+          default: return;
+        }
+      }
+      // Print computer choice (for testing only)
+      for(let i=0; i<10; i++) 
+        console.log(`${getComputerChoice()}\n`);;
 
-      // Function game() calls the function playRound() 5 times for 5 rounds of this game and prints the result at the end of 5 rounds.
+      /***********************************************
+       * Function playRound() plays 1 round with 2
+       * parameters (choices of player and computer)
+       * and returns the result of current round
+       */
 
-      // Function rockSelected() is called when player selected "rock" and is compared to the computerChoice then returns the result
+      /***********************************************
+       * Function game() calls function playRound()
+       * 5 times (5 rounds per game) and prints the
+       * result of the game at the end of 5 rounds
+       */
 
-      // Function paperSelected() is called when player selected "paper" and is compared to the computerChoice then returns the result
+      /***********************************************
+       * Function rockSelected() is called if player
+       * selected "rock" and compared to computerChoice
+       * then returns the result
+       */
 
-      // Function scissorsSelected() is called when player selected "scissors" and is compared to the computerChoice then returns the result
-
+      /***********************************************
+       * Function paperSelected() is called if player
+       * selected "paper" and compared to computerChoice
+       * then returns the result
+       */
+      /***********************************************
+       * Function scissorsSelected() is called if player
+       * selected "scissors" and compared to computerChoice
+       * then returns the result
+       */
     </script>
   </body>
 </html>
