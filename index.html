@@ -17,9 +17,9 @@
 
         // randomNum corresponds to Rock, Paper, or Scissors
         switch(randomNum){
-          case 1: return "Rock";
-          case 2: return "Paper";
-          case 3: return "Scissors";
+          case 1: return "rock";
+          case 2: return "paper";
+          case 3: return "scissors";
           default: return;
         }
       }
@@ -54,9 +54,6 @@
         }
       }
 
-
-
-
       /***********************************************
        * Function game() calls function playRound()
        * 5 times (5 rounds per game) and prints the
@@ -68,17 +65,39 @@
        * selected "rock" and compared to computerChoice
        * then returns the result
        */
+      function rockSelected(computerChoice){
+        switch(computerChoice){
+          case "paper": return "Lose";
+          case "scissors": return "Win";
+          default: return;
+        }
+      }
 
       /***********************************************
        * Function paperSelected() is called if player
        * selected "paper" and compared to computerChoice
        * then returns the result
        */
+       function paperSelected(computerChoice){
+        switch(computerChoice){
+          case "scissors": return "Lose";
+          case "rock": return "Win";
+          default: return;
+        }
+      }
+
       /***********************************************
        * Function scissorsSelected() is called if player
        * selected "scissors" and compared to computerChoice
        * then returns the result
        */
+       function scissorsSelected(computerChoice){
+        switch(computerChoice){
+          case "rock": return "Lose";
+          case "paper": return "Win";
+          default: return;
+        }
+      }
     </script>
   </body>
 </html>
