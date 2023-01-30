@@ -32,6 +32,30 @@
        * parameters (choices of player and computer)
        * and returns the result of current round
        */
+      function playRound(playerSelection, computerSelection){
+        // If player and computer chose the same, return "Tie"
+        if (playerSelection === computerSelection){
+          return "Tie";
+        }
+        // Else, compare choices
+        else {
+          // Each case (player's choice) is compared to the
+          // computerSelection using functions based on the
+          // player's choice
+          switch(playerSelection.toLowerCase()){
+            case "rock":
+              return rockSelected(computerSelection);
+            case "paper":
+              return paperSelected(computerSelection);
+            case "scissors":
+              return scissorsSelected(computerSelection);
+            default: return;
+          }
+        }
+      }
+
+
+
 
       /***********************************************
        * Function game() calls function playRound()
