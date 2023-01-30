@@ -23,9 +23,6 @@
           default: return;
         }
       }
-      // Print computer choice (for testing only)
-      for(let i=0; i<10; i++) 
-        console.log(`${getComputerChoice()}\n`);;
 
       /***********************************************
        * Function playRound() plays 1 round with 2
@@ -59,6 +56,45 @@
        * 5 times (5 rounds per game) and prints the
        * result of the game at the end of 5 rounds
        */
+      function game(){
+        let playerScore = 0;
+        let computerScore = 0;
+        let playerSelection = "";
+        let computerSelection = "";
+
+        // Play 5 rounds of this game
+        for (let i = 0; i < 5; i++){
+          // Prompt user to enter a choice
+          playerSelection = prompt("Rock/Paper/Scissors?").toLowerCase();
+          // Generate a computer choice using function
+          computerSelection = getComputerChoice();
+          let roundResult = playRound(playerSelection, computerSelection);
+          switch(roundResult){
+            case "Tie":
+              playerScore++;
+              computerScore++;
+              break;
+            case "Win":
+              playerScore++;
+              break;
+            case "Lose":
+              computerScore++;
+              break;
+            default: //none
+          }
+          console.log(`Round ${i+1}: Player: ${playerSelection}\tComputer: ${computerSelection}`);
+          console.log(`\t\t Player: ${playerScore}\tComputer: ${computerScore}`);
+        }
+        if (playerScore === computerScore){
+          console.log("It's a tie!");
+        }
+        else if (playerScore > computerScore) {
+          console.log("Congratulations! You won!");
+        }
+        else {
+          console.log("You lost! Better luck next time.");
+        }
+      }
 
       /***********************************************
        * Function rockSelected() is called if player
@@ -98,6 +134,7 @@
           default: return;
         }
       }
+      game();
     </script>
   </body>
 </html>
