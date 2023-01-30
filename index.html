@@ -134,7 +134,12 @@
           default: return;
         }
       }
-      game();
+
+      let playAgain = "y";
+      do {
+        game();
+        playAgain = prompt("Do you want to play again? (y/n)");
+      } while(playAgain.charAt(0).toLowerCase()==="y");
     </script>
   </body>
 </html>
