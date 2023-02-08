@@ -30,7 +30,7 @@ div.container {
   gap: 16px;
   flex-direction: column;
   border: none;
-  box-shadow: 0 0 10px lightskyblue;
+  box-shadow: 0 0 3px lightskyblue;
   border-radius: 8px;
   max-width: 400px;
   min-width: 200px;
@@ -54,10 +54,17 @@ button {
   margin: 8px;
   min-width: 80px;
   border-radius: 8px;
-  border-style: outset;
-  background-color: rgb(113, 209, 253);
+  background-color: rgb(120, 220, 250);
   color: black;
-  border: 2px outset rgb(113, 209, 253);
+  border: 1.8px solid rgb(120, 220, 250);
+}
+.btn-selected {
+  box-shadow: 0 0 6px 2px rgb(120, 220, 250);
+  border: 1.8px solid rgb(184, 236, 252);
+}
+.btn-grey {
+  background-color: rgb(175, 209, 243);
+  border-color: rgb(175, 209, 243);
 }
 .player-result,
 .computer-result {
