@@ -1,3 +1,8 @@
+:root {
+  font-size: 16px;
+  background-color: black;
+  color: white;
+}
 h1 {
   font-size: 28px;
   font-family: Ubuntu, sans-serif;
@@ -8,7 +13,7 @@ h2,
 .info > p{
   font-size: 24px;
   font-family: Ubuntu, sans-serif;
-  margin: 12px 0 8px;
+  margin: 16px 0 0 0;
 }
 
 div.container {
@@ -17,7 +22,6 @@ div.container {
   justify-content: center;
   padding: 28px;
   margin: 8px;
-  border: 1px solid red;
 }
 .player,
 .computer {
@@ -25,7 +29,9 @@ div.container {
   flex: 1;
   gap: 16px;
   flex-direction: column;
-  border: 1px solid green;
+  border: none;
+  box-shadow: 0 0 10px lightskyblue;
+  border-radius: 8px;
   max-width: 400px;
   min-width: 200px;
   align-items: stretch;
@@ -37,20 +43,25 @@ div.container {
   justify-content: space-evenly;
 }
 .btn-container {
-  border: 1px dotted magenta;
   display: flex;
   justify-content: center;
-  gap: 8px;
   flex-wrap: wrap;
 }
 button {
   font-size: 16px;
-  font-weight: bold;
-  padding: 8px;
+  font-weight: 600;
+  padding: 12px 16px;
+  margin: 8px;
   min-width: 80px;
+  border-radius: 8px;
+  border-style: outset;
+  background-color: rgb(113, 209, 253);
+  color: black;
+  border: 2px outset rgb(113, 209, 253);
 }
 .player-result,
 .computer-result {
   font-size: 18px;
   text-align: center;
+  margin: 0 0 16px 0;
 }
