@@ -1,3 +1,20 @@
+/*** GLOBAL VARIABLES ***/
+let playerScore = 0;
+let computerScore = 0;
+
+// Get Nodelist of the player's buttons
+const playerBtn = document.querySelectorAll(".player-btn");
+
+// Get DOM nodes of computer's and player's scores 
+const cScore = document.getElementById("computer-score");
+const pScore = document.getElementById("player-score");
+
+// Get DOM node of computer and player's result
+const computerResult = document.getElementById("computer-result");
+const playerResult = document.getElementById("player-result");
+
+// Get DOM node of div displaying the result of the game
+const gameResult = document.getElementById("game-result");
 
 /***********************************************
  * Function getComputerChoice() that generates
@@ -50,8 +67,6 @@ function playRound(playerSelection, computerSelection){
  * the result at the end of the game
  */
 function game(){
-  let playerScore = 0;
-  let computerScore = 0;
   let playerSelection = "";
   let computerSelection = "";
 
