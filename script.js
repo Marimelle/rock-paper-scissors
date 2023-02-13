@@ -83,12 +83,13 @@ function playRound(playerSelection, computerSelection){
  * when a player's button is clicked and prints
  * the result at the end of the game
  */
-function game(){
+function game(e){
   let playerSelection = "";
   let computerSelection = "";
 
-  // Prompt user to enter a choice
-  playerSelection = prompt("Rock/Paper/Scissors?").toLowerCase();
+  // Get player's choice from event e target node (button)
+  playerSelection = e.target.textContent.toLowerCase();
+
   // Generate a computer choice using function
   computerSelection = getComputerChoice();
   let roundResult = playRound(playerSelection, computerSelection);
@@ -105,8 +106,8 @@ function game(){
       break;
     default: //none
   }
-  console.log(`Round ${i+1}: Player: ${playerSelection}\tComputer: ${computerSelection}`);
-  console.log(`\t\t Player: ${playerScore}\tComputer: ${computerScore}`);
+  console.log(`Player: ${playerSelection}\tComputer: ${computerSelection}`);
+  console.log(`Player: ${playerScore}\tComputer: ${computerScore}`);
   if (playerScore === computerScore){
     console.log("It's a tie!");
   }
