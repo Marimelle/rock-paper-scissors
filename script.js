@@ -110,6 +110,7 @@ function game(e){
   if(playerScore == 5 || computerScore == 5) {
     // Show the result of the game
     showGameResult();
+    askPlayAgain();
   }
 }
 
@@ -161,6 +162,14 @@ function showGameResult(){
   playerBtn.forEach(btn => btn.removeEventListener("click", clickBtn));
 }
 
+function askPlayAgain(){
+  let playAgainBtn = document.createElement("button");
+  playAgainBtn.setAttribute("onclick", "location.reload()");
+  playAgainBtn.style.display = "block";
+  playAgainBtn.style.margin = "auto";
+  playAgainBtn.textContent = "Play again";
+  gameResult.appendChild(playAgainBtn);
+}
 
 /***********************************************
  * Function rockSelected() is called if player
