@@ -5,6 +5,11 @@ let computerScore = 0;
 // Get Nodelist of the player's buttons
 const playerBtn = document.querySelectorAll(".player-btn");
 
+// Add event listener for each of the players button
+playerBtn.forEach(btn => {
+  btn.addEventListener("click", clickBtn);
+});
+
 // Get DOM nodes of computer's and player's scores 
 const cScore = document.getElementById("computer-score");
 const pScore = document.getElementById("player-score");
@@ -15,6 +20,18 @@ const playerResult = document.getElementById("player-result");
 
 // Get DOM node of div displaying the result of the game
 const gameResult = document.getElementById("game-result");
+
+/******************************************************
+ * Function called when a player's button is clicked on
+ */
+function clickBtn(e){
+  // Remove class btn-selected to reset
+  playerBtn.forEach(btn => btn.classList.remove("btn-selected"));
+  // Add class btn-selected to clicked button
+  e.target.classList.add("btn-selected");
+  // Call function game and pass e (event) as argument
+  game(e);
+}
 
 /***********************************************
  * Function getComputerChoice() that generates
