@@ -62,10 +62,6 @@ button {
   box-shadow: 0 0 6px 2px rgb(120, 220, 250);
   border: 1.8px solid rgb(184, 236, 252);
 }
-.btn-grey {
-  background-color: rgb(175, 209, 243);
-  border-color: rgb(175, 209, 243);
-}
 #player-result,
 #computer-result {
   font-size: 18px;
