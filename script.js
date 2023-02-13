@@ -93,6 +93,15 @@ function game(e){
   // Generate a computer choice using function
   computerSelection = getComputerChoice();
   let roundResult = playRound(playerSelection, computerSelection);
+
+  // Get nodelist of computer's buttons
+  let cBtns = document.querySelectorAll(".computer-btn");
+  // Reset computer buttons by removing .btn-selected
+  cBtns.forEach(btn => btn.classList.remove("btn-selected"));
+  // Add .btn-selected to selected computer button
+  let cBtn = document.querySelector( `.c-${computerSelection}`);
+  cBtn.classList.add("btn-selected");
+  
   switch(roundResult){
     case "Tie":
       playerScore++;
