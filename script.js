@@ -145,13 +145,13 @@ switch(roundResult){
  */
 function showGameResult(){
   if (playerScore === computerScore){
-    gameResult.textContent = "It's a tie!";
+    gameResult.innerText = "GAME OVER!\nIt's a tie!";
   }
   else if (playerScore > computerScore) {
-    gameResult.textContent = "Congratulations! You won!";
+    gameResult.innerText = "GAME OVER!\nCongratulations! You won!";
   }
   else {
-    gameResult.textContent = "You lost! Better luck next time.";
+    gameResult.innerText = "GAME OVER!\nYou lost! Better luck next time.";
   }
   playerBtn.forEach(btn => btn.removeEventListener("click", clickBtn));
 }
