@@ -69,8 +69,8 @@ button {
 #player-result,
 #computer-result {
   font-size: 18px;
-  text-align: center;
-  margin: 0 0 16px 0;
+  text-align: left;
+  margin: 0 auto 16px;
   line-height: 1.5;
 }
 #game-result {
