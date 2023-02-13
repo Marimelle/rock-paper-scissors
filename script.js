@@ -1,6 +1,7 @@
 /*** GLOBAL VARIABLES ***/
 let playerScore = 0;
 let computerScore = 0;
+let round = 1;
 
 // Get Nodelist of the player's buttons
 const playerBtn = document.querySelectorAll(".player-btn");
@@ -116,28 +117,32 @@ function game(e){
  * Display result and scores for current round
  */
 function showRoundResult(roundResult){
+  playerResult.innerText += `\nRound\t${round}:`
+  computerResult.innerText += `\nRound\t${round}:`
 switch(roundResult){
     case "Tie":
       playerScore++;
       computerScore++;
-      playerResult.innerText += "\nTie";
-      computerResult.innerText += "\nTie";
+      playerResult.innerText += " Tie";
+      computerResult.innerText += " Tie";
       break;
     case "Win":
       playerScore++;
-      playerResult.innerText += "\nWin";
-      computerResult.innerText += "\nLose";
+      playerResult.innerText += " Win";
+      computerResult.innerText += " Lose";
       break;
     case "Lose":
       computerScore++;
-      playerResult.innerText += "\nLose";
-      computerResult.innerText += "\nWin";
+      playerResult.innerText += " Lose";
+      computerResult.innerText += " Win";
       break;
     default: //none
   }
   // Display scores
   pScore.textContent = playerScore;
   cScore.textContent = computerScore;
+
+  round++;
 }
 
 /************************************************
