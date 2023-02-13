@@ -66,9 +66,19 @@ button {
   background-color: rgb(175, 209, 243);
   border-color: rgb(175, 209, 243);
 }
-.player-result,
-.computer-result {
+#player-result,
+#computer-result {
   font-size: 18px;
   text-align: center;
   margin: 0 0 16px 0;
+}
+#game-result {
+  border: none;
+  box-shadow: 0 0 3px lightskyblue;
+  border-radius: 8px;
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 16px;
 }
