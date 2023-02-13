@@ -124,13 +124,3 @@ function rockSelected(computerChoice){
     default: return;
   }
 }
-/************************************************
- * Play 5 rounds then prompt user if he/she wants
- * to play for another 5 rounds.
- */
-
-let playAgain = "y";
-do {
-  game();
-  playAgain = prompt("Do you want to play again? (y/n)");
-} while(playAgain.charAt(0).toLowerCase()==="y");
