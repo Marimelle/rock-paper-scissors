@@ -101,22 +101,7 @@ function game(e){
   // Add .btn-selected to selected computer button
   let cBtn = document.querySelector( `.c-${computerSelection}`);
   cBtn.classList.add("btn-selected");
-  
-  switch(roundResult){
-    case "Tie":
-      playerScore++;
-      computerScore++;
-      break;
-    case "Win":
-      playerScore++;
-      break;
-    case "Lose":
-      computerScore++;
-      break;
-    default: //none
-  }
-  console.log(`Player: ${playerSelection}\tComputer: ${computerSelection}`);
-  console.log(`Player: ${playerScore}\tComputer: ${computerScore}`);
+  showRoundResult(roundResult);
   if (playerScore === computerScore){
     console.log("It's a tie!");
   }
@@ -128,6 +113,33 @@ function game(e){
   }
 }
 
+/**************************************************
+ * Display result and scores for current round
+ */
+function showRoundResult(roundResult){
+switch(roundResult){
+    case "Tie":
+      playerScore++;
+      computerScore++;
+      playerResult.innerText += "\nTie";
+      computerResult.innerText += "\nTie";
+      break;
+    case "Win":
+      playerScore++;
+      playerResult.innerText += "\nWin";
+      computerResult.innerText += "\nLose";
+      break;
+    case "Lose":
+      computerScore++;
+      playerResult.innerText += "\nLose";
+      computerResult.innerText += "\nWin";
+      break;
+    default: //none
+  }
+  // Display scores
+  pScore.textContent = playerScore;
+  cScore.textContent = computerScore;
+}
 /***********************************************
  * Function rockSelected() is called if player
  * selected "rock" and compared to computerChoice
