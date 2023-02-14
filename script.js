@@ -164,9 +164,13 @@ function showGameResult(){
 
 function askPlayAgain(){
   let playAgainBtn = document.createElement("button");
-  playAgainBtn.setAttribute("onclick", "location.reload()");
+  //playAgainBtn.setAttribute("onclick", "location.reload()");
+  playAgainBtn.addEventListener("click", (e) => {
+    e.target.classList.add("btn-selected");
+    location.reload();
+  });
   playAgainBtn.style.display = "block";
-  playAgainBtn.style.margin = "auto";
+  playAgainBtn.style.margin = "16px auto";
   playAgainBtn.textContent = "Play again";
   gameResult.appendChild(playAgainBtn);
 }
